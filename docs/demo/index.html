@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Interactive motion replay</title>
+ <link rel="stylesheet" href="demo.css?v=20260910-filled-controls">
+ <script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
+</head>
+<body>
+ <main class="demo" aria-label="Interactive robot motion replay">
+  <span id="status" role="status" aria-live="polite" hidden>Loading recorded motion…</span>
+  <div class="stage" id="stage" tabindex="0" aria-label="3D motion replay. Drag to orbit, scroll to zoom. Space pauses, R resets.">
+   <div class="start-screen" id="start-screen">
+    <h1>Loading recorded motion…</h1>
+    <p>Preparing the scene at the first frame.</p>
+    <button class="primary" id="load" hidden>Retry loading</button>
+   </div>
+   <div class="metrics" id="metrics" hidden><span><b id="elapsed">0.00</b> s</span></div>
+   <div class="hint" id="hint" hidden>Drag to orbit · Scroll to zoom</div>
+  </div>
+  <div class="controls" id="controls" inert>
+   <div class="control-row replay-controls">
+    <label class="select-field">Object<select id="object" aria-label="Object"><option>Large box</option></select></label>
+    <label class="select-field motion-field">Motion<select id="motion" aria-label="Motion"><option>Loading motions</option></select></label>
+    <label class="select-field variant-field">Variant<select id="variant" aria-label="Variant"><option>Loading variants</option></select></label>
+    <button id="pause" aria-label="Play replay">Play</button><button id="reset">Reset</button><button id="camera" title="Reset camera view">View ↺</button>
+   </div>
+  </div>
+ </main>
+ <script type="module" src="src/app.js?v=20260911-root-joints"></script>
+</body>
+</html>

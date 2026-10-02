@@ -3,6 +3,10 @@
        alt="WEAVE: Learning Whole-Body Dexterous Loco-Manipulation from Human–Object Interactions" />
 </p>
 
+<p align="center">
+  🌐 <a href="https://anonymous.4open.science/w/Weave-workshop/">Project Page</a>
+</p>
+
 ## 🔧 Installation
 
 1. Create a workspace directory — everything (Isaac Sim, IsaacLab, the venv, this repo) is installed side by side inside it, so pick a disk with **~30 GB** free:
@@ -11,12 +15,16 @@
     mkdir -p "$WORKSPACE" && cd "$WORKSPACE"
   ```
 
-2. Clone the repository
+2. Download the code from the [anonymous repository](https://anonymous.4open.science/r/Weave-workshop/)
+   (the *Download* button, or this [direct ZIP link](https://anonymous.4open.science/api/repo/Weave-workshop/zip)),
+   then extract it and enter the directory:
   ```bash
-    git clone https://github.com/xiaohu-art/Weave.git
-    cd Weave
-    git lfs install && git lfs pull
+    unzip Weave-workshop.zip -d Weave-workshop && cd Weave-workshop
   ```
+
+   > Large simulation assets (`*.usd`, `*.obj`, …) are tracked with Git LFS and are not
+   > included in the ZIP archive; they can be downloaded individually through the
+   > repository's file browser when needed.
 
 3. Installation
   ```bash
